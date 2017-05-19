@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.externals import joblib
 from pprint import pprint
 from time import time
+import os
 from MovieReviewClassifierHelpers import preprocessor, tokenizer
 
 # initialize our TfidfVectorizer
@@ -30,7 +31,7 @@ pipe = Pipeline([('vect', tfidf),
                  ('clf', lr)])
 
 # read our training data into the dataframe
-df = pd.read_csv('./movie_data.csv')
+df = pd.read_csv(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'movie_data.csv'))
 
 # get our training data
 X_train = df.loc[:25000, 'review'].values

@@ -1,5 +1,6 @@
 from sklearn.externals import joblib
 import argparse
+import os
 from MovieReviewClassifierHelpers import preprocessor, tokenizer
 
 # set up our arguments and command line help via argparse
@@ -9,8 +10,9 @@ parser.add_argument('review', type=str, help='The movie review text')
 # get our command line arguments
 args = parser.parse_args()
 
+
 # load our classifier with joblib
-lr_classifier = joblib.load("lr_pipeline.pkl")
+lr_classifier = joblib.load(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'lr_pipeline.pkl'))
 
 # set up our outcome labels
 label = {0: 'negative', 1: 'positive'}
