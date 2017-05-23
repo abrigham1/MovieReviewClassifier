@@ -47,7 +47,6 @@ if __name__ == "__main__":
                               cv=3, verbose=1,
                               n_jobs=-1)
 
-
     print("Performing grid search...")
     print("pipeline:", [name for name, _ in pipe.steps])
     print("parameters:")
