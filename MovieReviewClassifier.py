@@ -45,7 +45,7 @@ if __name__ == "__main__":
     gridsearch = GridSearchCV(pipe, param_grid,
                               scoring='accuracy',
                               cv=3, verbose=1,
-                              n_jobs=3)
+                              n_jobs=-1)
 
 
     print("Performing grid search...")
